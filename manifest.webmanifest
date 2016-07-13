@@ -1,0 +1,16 @@
+{
+  "lang": "pt-br",
+  "name": "Calculadora de Combustível",
+  "description": "Descubra com qual combustível vale a pena abastecer seu carro!",
+  "short_name": "Completaí",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "scope": "",
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#27AB7A",
+  "background_color": "#27AB7A"
+}

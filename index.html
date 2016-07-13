@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="theme-color" content="#27AB7A">
+	<meta name="application-name" content="Completaí">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/png" href="icon.png" sizes=192x192>
+	<title>Calculadora de Combustível</title>
+	<link rel="stylesheet" href="css/material.min.css" type="text/css">
+	<link rel="stylesheet" href="css/config.min.css" type="text/css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+	<script type="text/javascript">
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('sw.js').then(function(registration) {
+			// Registration was successful
+			console.log('ServiceWorker registration successful with scope: ',    registration.scope);
+		}).catch(function(err) {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+		});
+	}
+	</script>
+</head>
+<body onLoad="logValor();">
+	<script type="text/javascript" src="js/material.min.js"></script>
+	<div id="container">
+
+		<div class="demo-card-square mdl-card mdl-shadow--2dp">
+			<div class="mdl-card__title mdl-card--expand">
+				<h2 class="mdl-card__title-text">Calculadora de Combustível</h2>
+			</div>
+			<div class="mdl-card__supporting-text">
+				<!-- Numeric Textfield with Floating Label -->
+		  		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<!-- Valor do álcool -->
+		   	<input onInput="calcular(this)" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\,[0-9]+)?" id="valorAlcool">
+		   	<label class="mdl-textfield__label" for="valorAlcool">Valor do Álcool: R$</label>
+		   	<span class="mdl-textfield__error">Valor inválido!</span>
+				</div>
+				<!-- Valor da gasolina -->
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			   	<input onInput="calcular(this)" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\,[0-9]+)?" id="valorGasolina">
+			   	<label class="mdl-textfield__label" for="valorGasolina">Valor da Gasolina: R$</label>
+			   	<span class="mdl-textfield__error">Valor inválido!</span>
+				</div>
+				<div>
+					<span id="result"></span>
+				</div>
+			</div>
+			<div class="mdl-card__actions mdl-card--border">
+				<span id="old_result" style="display:none;"></span>
+			</div>
+
+	</div>
+	<script type="text/javascript" src="js/script.min.js"></script>
+</body>
+</html>
